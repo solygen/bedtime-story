@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <body style="font-family:arial; font-size: 1rem">
+        <h1>BedtimeStories</h1>
+        <ul style="display: flex; list-style: none; justify-content: space-evenly; padding: 0; flex-wrap: wrap;">
+            <% albums.forEach(function(album) { %>
+                <li style="flex: 1">
+                    <!-- <a href="<%= album.uri %>"> -->
+                    <a href="<%= album.external_urls.spotify %>" style="text-decoration: none; color: black;">
+                        <h2><%= album._index %></h2>
+                        <img src="<%= album.images[1].url %>" height="<%= album.images[1].height %>" width="<%= album.images[1].width %>">
+                        <h2><%= album.name %></h2>
+                        <i><%= album._duration %></i>
+                    </a>
+                </li>
+            <% }); %>
+        </ul>
+    </body>
+</html>
